@@ -1,8 +1,9 @@
 "use client";
-import AboutSection from "@/components/AboutSection";
-import ContactUsSection from "@/components/ContactUsSection";
-import HomeSection from "@/components/HomeSection";
-import NavigationBar from "@/components/NavigationBar";
+
+import AboutSection from "@/components/About";
+import ContactUsSection from "@/components/Contact";
+import HomeSection from "@/components/Home";
+import NavigationBar from "@/components/Navigation/NavigationBar";
 import { useEffect, useState } from "react";
 
 const Page = () => {
@@ -30,16 +31,18 @@ const Page = () => {
 				setIsHome(false);
 			}
 		};
-
-		window.addEventListener("scroll", handleScroll);
-
+		if (typeof window !== "undefined" && window) {
+			window.addEventListener("scroll", handleScroll);
+		}
 		return () => {
-			window.removeEventListener("scroll", handleScroll);
+			if (typeof window !== "undefined" && window) {
+				window.removeEventListener("scroll", handleScroll);
+			}
 		};
 	}, []);
 
 	return (
-		<div className="h-screen overflow-y-scroll">
+		<div className="h-screen overflow-y-scroll ">
 			<NavigationBar isHome={isHome} />
 			<HomeSection />
 			<AboutSection />

@@ -3,6 +3,11 @@ import React from "react";
 interface NavigationBarProps {
 	isHome: boolean;
 }
+const Navigations = [
+	{ label: "Home", href: "#home" },
+	{ label: "About", href: "#about" },
+	{ label: "Contact", href: "#contact-us" },
+];
 
 const NavigationBar: React.FC<NavigationBarProps> = ({ isHome }) => {
 	return (
@@ -12,21 +17,13 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ isHome }) => {
 			} bg-gray-800 text-white p-4 md:p-6 lg:p-8 mb-4 flex z-50  justify-center items-center`}>
 			<nav className="flex justify-evenly w-full max-w-[650px]">
 				<ul className="flex items-center justify-evenly w-full">
-					<li className="mr-4">
-						<a href="#home" className="text-white hover:text-gray-300">
-							Home
-						</a>
-					</li>
-					<li className="mr-4">
-						<a href="#about" className="text-white hover:text-gray-300">
-							About
-						</a>
-					</li>
-					<li>
-						<a href="#contact-us" className="text-white hover:text-gray-300">
-							Contact Us
-						</a>
-					</li>
+					{Navigations.map((nav, index) => (
+						<li key={index} className="mr-4">
+							<a href={nav.href} className="text-white hover:text-gray-300">
+								{nav.label}
+							</a>
+						</li>
+					))}
 				</ul>
 			</nav>
 		</header>
