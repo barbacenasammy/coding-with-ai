@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Codeium Next.js Project
+
+This is a Next.js project that integrates with Codeium, an AI-powered coding assistant.
 
 ## Getting Started
 
-First, run the development server:
+To get started with this project, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository: `git clone https://github.com/barbacenasammy/coding-with-ai.git`
+2. Install the dependencies: `npm install` or `yarn install`
+3. Start the development server: `npm run dev` or `yarn dev`
+4. Open your browser and navigate to `http://localhost:3000`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Codeium Integration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project uses Codeium to provide AI-powered coding assistance. To use Codeium, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Sign up for a Codeium account: [https://codeium.com](https://codeium.com)
+2. Install the Codeium extension for your code editor: [https://codeium.com/extensions](https://codeium.com/extensions)
+3. Configure your Codeium account in the `next.config.js` file: `module.exports = { ... codeium: { apiKey: 'YOUR_API_KEY' } }`
 
-## Learn More
+## Next.js Configuration
 
-To learn more about Next.js, take a look at the following resources:
+This project uses Next.js to provide server-side rendering and static site generation. To configure Next.js, follow these steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Update the `next.config.js` file to configure your Next.js settings: `module.exports = { ... }`
+2. Use the `getStaticProps` function to pre-render pages at build time: `export async function getStaticProps() { ... }`
+3. Use the `getServerSideProps` function to pre-render pages on each request: `export async function getServerSideProps() { ... }`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Code Structure
 
-## Deploy on Vercel
+This project uses the following code structure:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `components`: React components used throughout the application
+- `pages`: Next.js pages that render the application
+- `public`: Static assets used by the application
+- `styles`: CSS styles used by the application
+- `utils`: Utility functions used by the application
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+To contribute to this project, follow these steps:
+
+1. Fork the repository: `git fork https://github.com/your-username/your-repo-name.git`
+2. Create a new branch: `git checkout -b your-branch-name`
+3. Make your changes: `git add .` and `git commit -m "Your commit message"`
+4. Push your changes: `git push origin your-branch-name`
+5. Create a pull request: `https://github.com/your-username/your-repo-name/pulls`
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
