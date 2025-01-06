@@ -6,12 +6,16 @@ interface ContactFormState {
 	message: string;
 }
 
+const DefaultContactFormState: ContactFormState = {
+	name: "",
+	email: "",
+	message: "",
+};
+
 const ContactForm = () => {
-	const [contactForm, setContactForm] = useState<ContactFormState>({
-		name: "",
-		email: "",
-		message: "",
-	});
+	const [contactForm, setContactForm] = useState<ContactFormState>(
+		DefaultContactFormState
+	);
 
 	const handleChange = (
 		event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,6 +29,7 @@ const ContactForm = () => {
 		try {
 			// Add your contact form logic here
 			// Handle success response
+			setContactForm(DefaultContactFormState);
 		} catch (error) {
 			console.error(error);
 			// Handle error response
